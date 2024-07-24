@@ -65,7 +65,7 @@ export const removeItems = async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'Item not found' });
     }
 
-    // Delete inventory item
+    // Delete item
     // await item.destroy();
 
     res.json({ message: 'Item removed successfully' });

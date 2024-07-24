@@ -18,7 +18,7 @@ exports.getAdminData = getAdminData;
 const addItems = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Assuming req.body contains data for adding items
-        const { itemName, price, description, quantity } = req.body;
+        const { question, subject, topic, mark, difficulty } = req.body;
         // Create new inventory item
         res.json({ message: 'Item added successfully' });
     }
@@ -64,7 +64,7 @@ const removeItems = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         if (!item) {
             return res.status(404).json({ message: 'Item not found' });
         }
-        // Delete inventory item
+        // Delete item
         // await item.destroy();
         res.json({ message: 'Item removed successfully' });
     }

@@ -1,0 +1,212 @@
+[
+  {
+    "question": "What is the speed of light?",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is the acceleration due to gravity?",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "Define inertia.",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is Ohm's Law?",
+    "subject": "Physics",
+    "topic": "Electricity",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is a conductor?",
+    "subject": "Physics",
+    "topic": "Electricity",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "Define kinetic energy.",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is refraction?",
+    "subject": "Physics",
+    "topic": "Optics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "Define potential energy.",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is a photon?",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "What is the first law of thermodynamics?",
+    "subject": "Physics",
+    "topic": "Thermodynamics",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "Explain Newton's Second Law.",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Describe the properties of electromagnetic waves.",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Explain the principle of superposition of waves.",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Describe the working of a transformer.",
+    "subject": "Physics",
+    "topic": "Electricity",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Explain the Doppler effect.",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "What is the law of conservation of energy?",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Describe the structure of an atom.",
+    "subject": "Physics",
+    "topic": "Atomic Physics",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Explain the working of an electric motor.",
+    "subject": "Physics",
+    "topic": "Electricity",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "What is the photoelectric effect?",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Describe the properties of X-rays.",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Derive the equation of motion for a free falling object.",
+    "subject": "Physics",
+    "topic": "Mechanics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Explain the quantum theory of light.",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Describe the process of nuclear fission.",
+    "subject": "Physics",
+    "topic": "Nuclear Physics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Explain the concept of wave-particle duality.",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Derive the Schrödinger equation.",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Explain the theory of relativity.",
+    "subject": "Physics",
+    "topic": "Relativity",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Describe the process of nuclear fusion.",
+    "subject": "Physics",
+    "topic": "Nuclear Physics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Explain the Heisenberg uncertainty principle.",
+    "subject": "Physics",
+    "topic": "Quantum Mechanics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Describe the properties of a black hole.",
+    "subject": "Physics",
+    "topic": "Astrophysics",
+    "difficulty": "Hard",
+    "marks": 15
+  },
+  {
+    "question": "Explain the concept of string theory.",
+    "subject": "Physics",
+    "topic": "Theoretical Physics",
+    "difficulty": "Hard",
+    "marks": 15
+  }
+]

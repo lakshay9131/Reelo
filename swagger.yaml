@@ -1,255 +1,162 @@
 openapi: 3.0.0
 info:
-  title: Grocery Booking API
-  description: API for managing grocery items and user orders
+  title: Question Generator 
+  description: API's for generating questions
   version: 1.0.0
 servers:
   - url: http://localhost:3000
 paths:
-  /api/login:
-    post:
-      summary: Authenticate user and generate JWT token
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                  description: User's username
-                password:
-                  type: string
-                  description: User's password
-      responses:
-        '200':
-          description: Successful authentication
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  token:
-                    type: string
-                    description: JWT token for accessing protected endpoints
-        '401':
-          description: Invalid username or password
-  /api/userinfo:
+
+  /:
     get:
-      summary: Get user information
-      security:
-        - ApiKeyAuth: []
+      summary: Start Page
+      description: Retrieves Sample Paper.
       responses:
         '200':
           description: Successful operation
           content:
-            application/json:
+            text/plain:
               schema:
-                type: object
-                properties:
-                  user:
-                    type: object
-                    description: User information decoded from JWT token
-        '401':
-          description: Unauthorized, invalid token
-  /api/admin/additems:
-    post:
-      summary: Add a new item to the inventory
-      description: Adds a new item to the inventory.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                itemName:
-                  type: string
-                price:
-                  type: number
-                description:
-                  type: string
-                quantity:
-                  type: number
-      responses:
-        '200':
-          description: Item added successfully
-        '500':
-          description: Error adding item
-  /api/admin/getitems:
-    get:
-      summary: Get all items from the inventory
-      description: Retrieves all items from the inventory.
-      responses:
-        '200':
-          description: Successful operation
+                type: string
+                example: "Welcome to the Grocery Booking API!"
         '500':
           description: Error retrieving items
-  /api/admin/removeitems:
-    post:
-      summary: Remove an item from the inventory
-      description: Removes an item from the inventory.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                itemId:
-                  type: number
-      responses:
-        '200':
-          description: Item removed successfully
-        '404':
-          description: Item not found
-        '500':
-          description: Error removing item
-  /api/admin/updateitems/{itemId}:
-    put:
-      summary: Update an item in the inventory
-      description: Updates an item in the inventory.
-      parameters:
-        - in: path
-          name: itemId
-          required: true
-          description: ID of the item to update
-          schema:
-            type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                itemName:
-                  type: string
-                price:
-                  type: number
-                description:
-                  type: string
-                quantity:
-                  type: number
-      responses:
-        '200':
-          description: Item updated successfully
-        '404':
-          description: Item not found
-        '500':
-          description: Error updating item
-  /api/admin/levels:
-    get:
-      summary: Get levels information
-      description: Retrieves levels information.
-      responses:
-        '200':
-          description: Successful operation
-        '500':
-          description: Error retrieving levels
-  /api/user/bookitems:
-      post:
-        summary: Create new orders
-        description: |
-          Creates new orders for the specified user.
-        requestBody:
-          required: true
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  delivery:
+                  error:
                     type: string
-                    description: Delivery information
-                  items:
+                    description: Error message indicating what went wrong.
+                example:
+                  error: "An error occurred while retrieving the sample paper."
+  /api/generatePaper:
+    post:
+      summary: Generate a Question Paper
+      description: Generate a question paper based on the total marks and difficulty distribution.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                marks:
+                  type: number
+                  description: Total marks for the question paper. Must be a positive number.
+                  example: 100
+                difficulty_distribution:
+                  type: object
+                  description: Distribution of questions based on difficulty levels.
+                  properties:
+                    easy:
+                      type: number
+                      description: Percentage of questions that should be of easy difficulty.
+                      example: 20
+                    medium:
+                      type: number
+                      description: Percentage of questions that should be of medium difficulty.
+                      example: 50
+                    hard:
+                      type: number
+                      description: Percentage of questions that should be of hard difficulty.
+                      example: 30
+                  required:
+                    - easy
+                    - medium
+                    - hard
+              required:
+                - marks
+                - difficulty_distribution
+      responses:
+        '200':
+          description: Successfully generated the question paper
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paper:
                     type: array
-                    description: Array of items in the order
                     items:
                       type: object
                       properties:
-                        itemId:
-                          type: integer
-                          description: ID of the item
-                        quantity:
-                          type: integer
-                          description: Quantity of the item
-                        totalPrice:
+                        question:
+                          type: string
+                          description: The text of the question.
+                        subject:
+                          type: string
+                          description: The subject of the question.
+                        topic:
+                          type: string
+                          description: The topic of the question.
+                        difficulty:
+                          type: string
+                          description: The difficulty level of the question.
+                        marks:
                           type: number
-                          description: Total price of the item
-                  subtotal:
-                    type: number
-                    description: Subtotal of the order
-                required:
-                  - delivery
-                  - items
-                  - subtotal
+                          description: The marks assigned to the question.
+                    example:
+                      - question: "What is the speed of light?"
+                        subject: "Physics"
+                        topic: "Waves"
+                        difficulty: "Easy"
+                        marks: 5
+                      - question: "Explain Newton's Second Law."
+                        subject: "Physics"
+                        topic: "Mechanics"
+                        difficulty: "Medium"
+                        marks: 10
+        '400':
+          description: Bad request due to invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating what went wrong.
+                example:
+                  error1: "Invalid difficulty level: easy"
+                  error2: "Invalid marks. Marks should be a positive number."
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating an internal server issue.
+                example:
+                  error: "An unexpected error occurred while generating the question paper."
+  /api/allquestions:
+      get:
+        summary: Start Page
+        description: Retrieves Sample Paper.
         responses:
           '200':
-            description: Orders created successfully
+            description: Successful operation
             content:
-              application/json:
+              text/plain:
                 schema:
-                  type: object
-                  properties:
-                    message:
-                      type: string
-                      description: Success message
-                    order:
-                      type: object
-                      description: Created order
-                      properties:
-                        orderId:
-                          type: integer
-                          description: ID of the order
-                        userInfo:
-                          type: integer
-                          description: ID of the user associated with the order
-                        delivery:
-                          type: string
-                          description: Delivery information
-                        items:
-                          type: array
-                          description: Array of items in the order
-                          items:
-                            type: object
-                            properties:
-                              itemId:
-                                type: integer
-                                description: ID of the item
-                              quantity:
-                                type: integer
-                                description: Quantity of the item
-                              totalPrice:
-                                type: number
-                                description: Total price of the item
-                        subtotal:
-                          type: number
-                          description: Subtotal of the order
+                  type: string
+                  example: "Welcome to the Grocery Booking API!"
           '500':
-            description: Failed to create orders
+            description: Error retrieving items
             content:
               application/json:
                 schema:
                   type: object
                   properties:
-                    message:
-                      type: string
-                      description: Error message
                     error:
                       type: string
-                      description: Error details
-  /api/user/getitems:
-    get:
-      summary: Get all items from the inventory
-      description: Retrieves all items from the inventory.
-      responses:
-        '200':
-          description: Successful operation
-        '500':
-          description: Error retrieving items
-  
+                      description: Error message indicating what went wrong.
+                  example:
+                    error: "An error occurred while retrieving the sample paper."
+
 security:
   - ApiKeyAuth: []
 components:
