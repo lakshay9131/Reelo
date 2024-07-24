@@ -2,7 +2,7 @@
 Technology Used Typescript , Swagger and Express 
 
 Importants
--> There is default question list to be added by uncommenting  the line number 133.
+-> There is default question list to be added by uncommenting  the line number 133 at index.ts
 
 (*Run  tsc -w  to check for any error and update for any changes )
 Run application using npm start (localhost:3000)
@@ -36,6 +36,7 @@ In generator.ts
 
 .) // ToDo more Scenarios
         // Scenario 1) consider leftout marks for another section.
+        // TODO Selection Algorithm if marks are  not equal for difficulty level
 
 There are few scene if marks are not equal in single category then,
 we have to add selection algorith to select as many as questions in particular category(eg. easy)
